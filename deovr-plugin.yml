@@ -1,0 +1,20 @@
+name: deovr-plugin
+description: Creates the json files that deovr is expecting
+version: 0.1
+url: https://github.com/tweeticoats/stash-deovr-plugin
+exec:
+ - python3
+ - "{pluginDir}/deovr-plugin.py"
+ - api
+interface: raw
+tasks:
+  - name: Setup tags
+    description: Create tags used by plugin, ie export_deovr
+    defaultArgs:
+      mode: setup
+  - name: create json
+    description: run scrapers on tagged scenes
+    defaultArgs:
+      mode: json
+
+
